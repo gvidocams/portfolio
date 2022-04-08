@@ -7,32 +7,72 @@
 
 body {
   background-color: #181818;
+  overflow-x: hidden;
 }
 
-nav {
+#introduction {
+  position: relative;
+  height: 100vh;
   padding: 15px;
+  /* Navigation Field */
+  /*Content*/
 }
 
-nav ul {
+#introduction nav ul {
   list-style: none;
 }
 
-nav ul li {
+#introduction nav ul li {
   display: inline;
 }
 
-nav ul li a {
+#introduction nav ul li a {
   color: gray;
   text-decoration: none;
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
 }
 
-nav ul li a:hover {
+#introduction nav ul li a:hover {
   color: white;
 }
 
-nav ul li + li {
+#introduction nav ul li + li {
   padding-left: 5px;
+}
+
+#introduction header {
+  padding-top: 20vh;
+}
+
+#introduction header h1 {
+  font-size: 25px;
+  font-family: monospace;
+  color: white;
+}
+
+#introduction header p {
+  padding: 3vh 0 6vh 0;
+  color: #a1a1a1;
+}
+
+#introduction #contact {
+  font-family: monospace;
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 7px;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+#introduction #contact::before {
+  content: "> ";
+}
+
+#introduction #contact:hover {
+  background-color: white;
+  color: black;
 }
 /*# sourceMappingURL=style.css.map */
