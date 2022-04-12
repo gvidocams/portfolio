@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -5,50 +6,108 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #181818;
   overflow-x: hidden;
 }
 
-#introduction {
-  position: relative;
-  height: 100vh;
+main {
   padding: 15px;
-  /* Navigation Field */
-  /*Content*/
 }
 
-#introduction nav ul {
+section + section {
+  margin: 40px 0px;
+}
+
+/* Navigation Field */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  -webkit-transition: top 0.3s;
+  transition: top 0.3s;
+  background-color: rgba(15, 15, 15, 0.593);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  border-radius: 0 0 5px 5px;
+  z-index: 3;
+}
+
+nav ul {
   list-style: none;
+  padding: 12px 15px;
 }
 
-#introduction nav ul li {
+nav ul li {
   display: inline;
 }
 
-#introduction nav ul li a {
+nav ul li a {
   color: gray;
   text-decoration: none;
-  -webkit-transition: 0.2s ease-out;
-  transition: 0.2s ease-out;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 
-#introduction nav ul li a:hover {
+nav ul li a:hover {
   color: white;
 }
 
-#introduction nav ul li + li {
+nav ul li + li {
   padding-left: 5px;
 }
 
+#introduction {
+  position: relative;
+  height: 100vh;
+  /*Content*/
+}
+
 #introduction header {
-  padding-top: 20vh;
+  position: relative;
+  padding-top: 75px;
+}
+
+#introduction header #typewriter {
+  font-size: 30px;
+  font-family: monospace;
+  color: #ff00ee;
+}
+
+#introduction header #typewriter::after {
+  content: '|';
+  margin-left: -5px;
+  -webkit-animation: blink 0.7s infinite;
+          animation: blink 0.7s infinite;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 #introduction header h1 {
   font-size: 25px;
   font-family: monospace;
   color: white;
+  padding-top: 20px;
 }
 
 #introduction header p {
@@ -63,16 +122,162 @@ body {
   padding: 5px;
   border: 2px solid white;
   border-radius: 7px;
-  -webkit-transition: 0.2s ease-out;
-  transition: 0.2s ease-out;
-}
-
-#introduction #contact::before {
-  content: "> ";
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
 }
 
 #introduction #contact:hover {
   background-color: white;
   color: black;
+}
+
+#about_me header h2 {
+  font-family: monospace;
+  font-size: 25px;
+  color: white;
+}
+
+#about_me article p {
+  color: gray;
+}
+
+#about_me article .flex {
+  padding-top: 3vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#about_me article .flex .child ul {
+  list-style: none;
+}
+
+#about_me article .flex .child ul li {
+  font-family: monospace;
+  color: white;
+  padding-top: 1vh;
+}
+
+#about_me article .flex .child ul li::before {
+  content: "✅";
+  display: inline-block;
+  width: 2em;
+}
+
+#about_me article .flex .child ul .learning::before {
+  content: "🎓";
+}
+
+#portfolio header h2 {
+  font-family: monospace;
+  font-size: 25px;
+  color: white;
+}
+
+#portfolio header p {
+  color: gray;
+}
+
+#contact_me header h2 {
+  font-family: monospace;
+  font-size: 25px;
+  color: white;
+}
+
+#contact_me header p {
+  color: gray;
+}
+
+#contact_me input,
+#contact_me textarea {
+  width: 100%;
+  color: white;
+  background-color: #181818;
+  border: 1px solid white;
+  border-radius: 7px;
+  padding: 10px;
+  margin: 10px 0px;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+}
+
+#contact_me input:focus,
+#contact_me input:hover,
+#contact_me textarea:focus,
+#contact_me textarea:hover {
+  color: black;
+  background-color: white;
+  outline: none;
+}
+
+#contact_me button {
+  font-family: monospace;
+  width: 80px;
+  background-color: #181818;
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 7px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+#contact_me button:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #0f0f0f;
+  padding: 20px 0;
+}
+
+footer .links {
+  width: 150px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 20px;
+}
+
+footer .links div {
+  border: 1px solid white;
+  border-radius: 60px;
+  padding: 6px 9px;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+footer .links div a {
+  color: white;
+  text-decoration: none;
+}
+
+footer .links .linkedin:hover,
+footer .links .linkedin:active {
+  cursor: pointer;
+  background-color: #0077b5;
+  border-color: #0077b5;
+}
+
+footer .links .github:hover,
+footer .links .github:active {
+  cursor: pointer;
+  background-color: #6e5494;
+  border-color: #6e5494;
+}
+
+footer .links .instagram:hover,
+footer .links .instagram:active {
+  cursor: pointer;
+  background-color: #E1306C;
+  border-color: #E1306C;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,7 +1,15 @@
+$white: white;
+$neonPink: rgb(255, 0, 238);
+
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -9,64 +17,272 @@ body {
     overflow-x: hidden;
 }
 
+main {
+    padding: 15px;
+}
+
+section+section {
+    margin: 40px 0px;
+}
+/* Navigation Field */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.3s;
+
+    background-color: rgba(15, 15, 15, 0.593);
+    backdrop-filter: blur(2px);
+    border-radius: 0 0 5px 5px;
+
+    z-index: 3;
+    ul {
+        list-style: none;
+        padding: 12px 15px;
+        li {
+            display: inline;
+
+            a {
+                color: gray;
+                text-decoration: none;
+                transition: 0.2s ease;
+            }
+
+            a:hover {
+                color: $white;
+            }
+        }
+
+        li+li {
+            padding-left: 5px;
+        }
+    }
+}
+
 #introduction {
     position: relative;
     height: 100vh;
-    padding: 15px;
-    /* Navigation Field */
-    nav {
-        ul {
-            list-style: none;
 
-            li {
-                display: inline;
 
-                a {
-                    color: gray;
-                    text-decoration: none;
-                    transition: 0.2s ease-out;
-                }
 
-                a:hover {
-                    color: white;
-                }
-            }
-
-            li+li {
-                padding-left: 5px;
-            }
-        }
-    }
     /*Content*/
     header {
-        padding-top: 20vh;
+        position: relative;
+        padding-top: 75px;
+
+        #typewriter {
+            font-size: 30px;
+            font-family: monospace;
+            color: $neonPink;
+        }
+
+        #typewriter::after {
+            content: '|';
+            margin-left: -5px;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
         h1 {
             font-size: 25px;
             font-family: monospace;
-            color: white;
+            color: $white;
+
+            padding-top: 20px;
         }
+
         p {
-            padding: 3vh 0 6vh 0; 
+            padding: 3vh 0 6vh 0;
             color: rgb(161, 161, 161);
         }
     }
+
     #contact {
         font-family: monospace;
 
-        color: white;
+        color: $white;
         text-decoration: none;
 
         padding: 5px;
-        border: 2px solid white;
+        border: 2px solid $white;
         border-radius: 7px;
 
-        transition: 0.2s ease-out;
+        transition: 0.2s ease;
     }
-    #contact::before {
-        content: "> ";
-    }
+
     #contact:hover {
-        background-color: white;
+        background-color: $white;
         color: black;
+    }
+}
+
+#about_me {
+    header {
+        h2 {
+            font-family: monospace;
+            font-size: 25px;
+            color: $white;
+        }
+    }
+
+    article {
+        p {
+            color: gray;
+        }
+
+        .flex {
+            padding-top: 3vh;
+            display: flex;
+            justify-content: space-around;
+
+            .child {
+                ul {
+                    list-style: none;
+
+                    li {
+                        font-family: monospace;
+                        color: $white;
+                        padding-top: 1vh;
+                    }
+
+                    li::before {
+                        content: "✅";
+                        display: inline-block;
+                        width: 2em;
+                    }
+
+                    .learning::before {
+                        content: "🎓";
+                    }
+                }
+            }
+        }
+    }
+}
+
+#portfolio {
+    header {
+        h2 {
+            font-family: monospace;
+            font-size: 25px;
+            color: $white;
+        }
+
+        p {
+            color: gray;
+        }
+    }
+}
+
+#contact_me {
+    header {
+        h2 {
+            font-family: monospace;
+            font-size: 25px;
+            color: $white;
+        }
+
+        p {
+            color: gray;
+        }
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        color: $white;
+
+        background-color: rgb(24, 24, 24);
+        border: 1px solid $white;
+        border-radius: 7px;
+
+        padding: 10px;
+        margin: 10px 0px;
+
+        transition: 0.4s ease;
+    }
+
+    input:focus,
+    input:hover,
+    textarea:focus,
+    textarea:hover {
+        color: black;
+        background-color: $white;
+        outline: none;
+    }
+
+    button {
+        font-family: monospace;
+        width: 80px;
+        background-color: rgb(24, 24, 24);
+        color: $white;
+        text-decoration: none;
+
+        padding: 5px;
+        border: 1px solid $white;
+        border-radius: 7px;
+
+        transition: 0.2s ease;
+    }
+
+    button:hover {
+        background-color: $white;
+        color: black;
+        cursor: pointer;
+    }
+}
+
+footer {
+    background-color: rgb(15, 15, 15);
+    padding: 20px 0;
+
+    .links {
+        width: 150px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-around;
+        font-size: 20px;
+
+        div {
+            border: 1px solid $white;
+            border-radius: 60px;
+            padding: 6px 9px;
+            transition: 0.2s ease;
+
+            a {
+                color: $white;
+                text-decoration: none;
+            }
+        }
+
+        .linkedin:hover,
+        .linkedin:active {
+            cursor: pointer;
+            background-color: rgb(0, 119, 181);
+            border-color: rgb(0, 119, 181);
+        }
+
+        .github:hover,
+        .github:active {
+            cursor: pointer;
+            background-color: #6e5494;
+            border-color: #6e5494;
+        }
+
+        .instagram:hover,
+        .instagram:active {
+            cursor: pointer;
+            background-color: #E1306C;
+            border-color: #E1306C;
+        }
     }
 }

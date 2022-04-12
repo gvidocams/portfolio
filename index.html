@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,23 +9,82 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Gvido Andis Čams</title>
 </head>
+
 <body>
-    <section id="introduction">
-        <nav>
-            <ul>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Contact me</a></li>
-            </ul>
-        </nav>
+    <script src="./scripts/navbar.js" defer></script>
+    <nav id="navbar">
+        <ul>
+            <li><a href="#about_me">About me</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact_me">Contact me</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="introduction">
+            <header>
+                <h2 id="typewriter">Hello World!</h2>
+                <script src="./scripts/typewriter.js" defer></script>
+                <h1>My name is <br>Gvido Andis Čams.<br>I am a web developer.</h1>
+                <p>I build Websites from the ground up. Currently I am a CodeCademy student enrolled in a course "Full Stack Developer" and building projects on my free time as well :)</p>
+            </header>
 
-        <header>
-            <h1>My name is <br>Gvido Andis Čams. <br>I am a web developer.</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi adipisci ullam, est praesentium facilis consequuntur, numquam quidem repellat incidunt ipsa et quibusdam eligendi recusandae provident? Explicabo optio fuga enim ratione!</p>
-        </header>
+            <a href="#contact_me" id="contact">Contact me...</a>
 
-        <a href="#" id="contact">Contact me...</a>
-        
-    </section>
+        </section>
+        <section id="about_me">
+            <header>
+                <h2>About Me</h2>
+            </header>
+            <article>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio fugiat aperiam natus in ea beatae eaque
+                    eligendi enim commodi necessitatibus, cumque nihil molestiae! Distinctio repudiandae illo
+                    repellendus beatae nesciunt possimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                    molestias laborum dolores molestiae ratione, aut velit atque veritatis quis qui vel? Quos, dicta.
+                    Laboriosam, minus. Iusto eveniet officiis facere incidunt.</p>
+                <p>Technologies, that I have experience in:</p>
+                <div class="flex">
+                    <div class="child">
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>SCSS</li>
+                        </ul>
+                    </div>
+                    <div class="child">
+                        <ul>
+                            <li>Javascript (ES6+)</li>
+                            <li class="learning">React</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <section id="portfolio">
+            <header>
+                <h2>Portfolio</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur perferendis, voluptate, fugiat beatae odio esse quod facilis, repellendus incidunt quo similique. Earum quaerat doloribus alias voluptatem id, maiores et culpa?</p>
+            </header>
+        </section>
+        <section id="contact_me">
+            <header>
+                <h2>Contact Me!</h2>
+                <p>If you are in the need of a website or just want to say "Hi!"</p>
+            </header>
+            <form action="https://formspree.io/f/xeqnrjyw" method="POST">
+                <input type="text" name="name" placeholder="Full Name"><br>
+                <input type="email" name="email" placeholder="Email"><br>
+                <textarea name="message" placeholder="Enter Your Message Here..."></textarea><br>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <div class="links">
+            <div class="linkedin"><a href="https://www.linkedin.com/in/gvido-andis-%C4%8Dams-935344204/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></div>
+            <div class="github"><a href="https://github.com/gvidocams" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+            <div class="instagram"><a href="https://www.instagram.com/gvidsa/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></div>
+        </div>
+    </footer>
 </body>
+
 </html>
