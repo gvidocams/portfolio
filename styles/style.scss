@@ -6,6 +6,7 @@ $neonPink: rgb(255, 0, 238);
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 html {
@@ -13,7 +14,7 @@ html {
 }
 
 body {
-    background-color: rgb(24, 24, 24);
+    background-color: rgb(18, 21, 21);
     overflow-x: hidden;
 }
 
@@ -24,14 +25,23 @@ main {
 section+section {
     margin: 40px 0px;
 }
+section {
+    header {
+        h2 {
+            padding: 10px 0;
+        }   
+    }
+    p {
+        padding: 10px 0;
+    }
+}
 /* Navigation Field */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    transition: top 0.3s;
+    transition: ease 0.3s;
 
-    background-color: rgba(15, 15, 15, 0.593);
     backdrop-filter: blur(2px);
     border-radius: 0 0 5px 5px;
 
@@ -43,6 +53,7 @@ nav {
             display: inline;
 
             a {
+                font-family: monospace;
                 color: gray;
                 text-decoration: none;
                 transition: 0.2s ease;
@@ -179,6 +190,7 @@ nav {
 
         p {
             color: gray;
+            text-align: center;
         }
     }
 }
@@ -201,7 +213,7 @@ nav {
         width: 100%;
         color: $white;
 
-        background-color: rgb(24, 24, 24);
+        background-color: rgb(18, 21, 21);
         border: 1px solid $white;
         border-radius: 7px;
 
@@ -242,8 +254,8 @@ nav {
 }
 
 footer {
-    background-color: rgb(15, 15, 15);
-    padding: 20px 0;
+    background-color: rgb(10, 11, 11);
+    padding: 20px 0 0 0;
 
     .links {
         width: 150px;
@@ -251,11 +263,11 @@ footer {
         display: flex;
         justify-content: space-around;
         font-size: 20px;
-
+        padding: 0 0 15px 0;
         div {
             border: 1px solid $white;
             border-radius: 60px;
-            padding: 6px 9px;
+            padding: 6px 11px;
             transition: 0.2s ease;
 
             a {
@@ -285,4 +297,31 @@ footer {
             border-color: #E1306C;
         }
     }
+    .made-with {
+        background-color: black;
+        p {
+            color: rgb(82, 82, 82);
+            text-align: center;
+            cursor:default;
+            padding: 7px;
+
+            #heart_container {
+                position: relative;
+                display: inline-block;
+                width: 20px;
+                #heart {
+                    position: absolute;
+                    left: 0;
+                    bottom: -4px;
+
+                }
+                #heart:hover {
+                    animation: beat .5s infinite alternate;
+                }
+                @keyframes beat {
+                    to {transform: scale(1.4);}
+                }
+            }
+            }
+        }
 }
